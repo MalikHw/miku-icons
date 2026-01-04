@@ -1,8 +1,8 @@
 Add-Type -AssemblyName System.Windows.Forms
-$Host.UI.RawUI.WindowTitle = "Teto Icons Installer - by MalikHw47"
+$Host.UI.RawUI.WindowTitle = "Miku Icons Installer - by MalikHw47"
 
-$Url = "https://github.com/MalikHw/teto-icons/releases/latest/download/teto-icons.zip"
-$ZipName = "teto-icons.zip"
+$Url = "https://github.com/MalikHw/miku-icons/releases/latest/download/miku-icons.zip"
+$ZipName = "miku-icons.zip"
 $RelativePath = "geode\config\geode.texture-loader\packs"
 
 # 1. Path Finding Logic
@@ -37,7 +37,7 @@ if (!(Test-Path $DestinationFolder)) {
 
 # --- NUKE AND REPLACE LOGIC ---
 $FinalZipPath = Join-Path -Path $DestinationFolder -ChildPath $ZipName
-$ExtractedFolder = Join-Path -Path $DestinationFolder -ChildPath "teto-cube"
+$ExtractedFolder = Join-Path -Path $DestinationFolder -ChildPath "miku-cube"
 
 if (Test-Path $FinalZipPath) {
     Write-Host "Old zip found. Nuking it..." -ForegroundColor DarkRed
@@ -50,15 +50,15 @@ if (Test-Path $ExtractedFolder) {
 # ------------------------------
 
 # 3. Download directly to destination
-Write-Host "Downloading fresh Teto Icons..." -ForegroundColor Green
+Write-Host "Downloading fresh Miku Icons..." -ForegroundColor Green
 try {
     Invoke-WebRequest -Uri $Url -OutFile $FinalZipPath
     
-    # Optional: If Geode requires it to be unzipped manually
+    # Optional: If Geode requires it to be unzipped manually cuz idk
     # Write-Host "Extracting..." -ForegroundColor Green
     # Expand-Archive -Path $FinalZipPath -DestinationPath $DestinationFolder -Force
     
-    [System.Windows.Forms.MessageBox]::Show("Teto Cube has been successfully replaced!", "Success")
+    [System.Windows.Forms.MessageBox]::Show("Miku Cube has been successfully replaced!", "Success")
 } catch {
     Write-Host "An error occurred: $_" -ForegroundColor Red
 }
