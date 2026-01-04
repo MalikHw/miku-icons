@@ -1,4 +1,4 @@
-![pic](IMG_20260103_013835.jpg)
+![pic](prev.jpg)
 # miku-icons
 The iconset i play with in GD
 
